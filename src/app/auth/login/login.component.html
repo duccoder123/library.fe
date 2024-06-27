@@ -1,0 +1,25 @@
+<form  class="form w-100" [formGroup]="loginForm" novalidate="novalidate" >
+    <div class="text-center mb-3">
+        <h1 class="text-dark fw-bolder mb-3">
+            Welcome
+        </h1>
+        <div class="text-gray-500 fw-semibold fs-6">
+            User
+        </div>
+    </div>
+    <ng-container *ngIf="loginFailed">
+        <div class="mb-lg-15 alert alert-danger">
+            <div class="alert-text font-weight-bold">
+                Error occured
+            </div>
+        </div>
+    </ng-container>
+
+    <div class="fv-row mb-8">
+        <label class="form-label fs-6 fw-bolder text-dark">Email</label>
+    <input type="email" class="form-control" formControlName="username" placeholder="Skriv inn din e-post"
+           autocomplete="off" autofocus
+           [ngClass]="{'is-invalid': loginForm.controls['username'].dirty && loginForm.controls['username'].invalid}" />
+    </div>
+    
+</form>
